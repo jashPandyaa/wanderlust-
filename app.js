@@ -84,7 +84,12 @@ app.use((req,res,next) => {
   next();
 });
 
-app.use("/", staticRouter);
+// app.use("/", staticRouter);
+
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 app.use("/listings" , listingRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/" , userRouter);
