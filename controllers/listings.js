@@ -137,3 +137,8 @@ module.exports.destroyListing = async (req, res) => {
     req.flash("success", "Listing Deleted!");
     res.redirect("/listings");
 };
+
+module.exports.adminIndex = async (req, res) => {
+  const allListings = await Listing.find({});
+  res.render("listings/admin-index.ejs", { allListings });
+};

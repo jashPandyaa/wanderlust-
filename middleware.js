@@ -56,3 +56,12 @@ module.exports.isReviewAuthor = async (req, res, next) => {
   }
   next();
 }
+
+
+module.exports.isAdmin = (req, res, next) => {
+  if (req.isAuthenticated() && req.user.isAdmin) {
+      return next();
+  }
+  req.flash("error", "You don't have permission to do that!");
+  res.redirect("/listings");
+};

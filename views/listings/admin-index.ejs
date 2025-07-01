@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate"); %>
+
+<div class="container mt-4">
+    <h2>Admin Dashboard</h2>
+    <p>Manage all listings</p>
+    
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% allListings.forEach(listing => { %>
+        <div class="col">
+            <div class="card h-100">
+                <img src="<%= listing.image.url %>" class="card-img-top" alt="<%= listing.title %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= listing.title %></h5>
+                    <p class="card-text"><%= listing.location %></p>
+                    <p class="card-text">Owner: <%= listing.owner.username %></p>
+                    <div class="d-flex justify-content-between">
+                        <a href="/listings/<%= listing._id %>/edit" class="btn btn-sm btn-primary">Edit</a>
+                        <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST">
+                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>
