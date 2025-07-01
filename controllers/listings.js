@@ -139,6 +139,6 @@ module.exports.destroyListing = async (req, res) => {
 };
 
 module.exports.adminIndex = async (req, res) => {
-  const allListings = await Listing.find({});
+  const allListings = await Listing.find({}).populate("owner");
   res.render("listings/admin-index.ejs", { allListings });
 };

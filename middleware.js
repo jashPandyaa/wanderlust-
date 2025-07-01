@@ -65,3 +65,20 @@ module.exports.isAdmin = (req, res, next) => {
   req.flash("error", "You don't have permission to do that!");
   res.redirect("/listings");
 };
+
+module.exports.isOwnerOrAdmin = async (req, res, next) => {
+  const { id } = req.params;
+  const listing = await Listing.findById(id);
+  
+  if (!listing) {
+      req.flash("error", "Listing not found!");
+      return res.redirect("/listings");
+  }
+  
+  if (listing.owner.equals(req.user._id) || req.user.isAdmin) {
+      return next();
+  }
+  
+  req.flash("error", "You don't have permission to do that!");
+  res.redirect("/listings");
+};
