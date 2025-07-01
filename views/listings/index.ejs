@@ -2,7 +2,6 @@
 <div class="special" style="margin-left: 1.2rem;">
     
 <style>
-    /* Filter Container */
     .filters-container {
         display: flex;
         align-items: center;
@@ -11,7 +10,6 @@
         gap: 1rem;
     }
 
-    /* Filters Row */
     #filters {
         display: flex;
         flex-wrap: wrap;
@@ -19,7 +17,6 @@
         align-items: center;
     }
 
-    /* Individual Filter */
     .filter {
         opacity: 0.7;
         color: inherit;
@@ -45,7 +42,6 @@
         color: #fe424d;
     }
 
-    /* Tax Toggle - Now aligned right */
     .tax-toggle {
         margin-left: auto;
         border: 1px solid #ddd;
@@ -57,7 +53,6 @@
         align-items: center;
     }
 
-    /* Mobile Styles */
     @media (max-width: 768px) {
         .filters-container {
             flex-direction: column;
@@ -78,7 +73,6 @@
         }
     }
 
-    /* Small Mobile Styles */
     @media (max-width: 576px) {
         #filters {
             display: none;
@@ -105,7 +99,6 @@
         }
     }
 
-    /* Filter Toggle Button */
     .filter-toggle-btn {
         display: none;
         margin: 0.5rem 0;
@@ -123,7 +116,6 @@
         }
     }
 
-    /* Tax Info */
     .tax-info {
         display: none;
     }
@@ -182,7 +174,6 @@
         </a>
     </div>
 
-    <!-- Tax Toggle - Now on same line, aligned right -->
     <div class="tax-toggle">
         <div class="form-check-reverse form-switch" style="margin-right: 0.5rem;">
             <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
@@ -190,7 +181,6 @@
         </div>
     </div>
 
-    <!-- Mobile Filter Toggle Button -->
     <button class="filter-toggle-btn" id="filterToggle">
         <i class="fas fa-filter"></i> Show Filters
     </button>
@@ -229,14 +219,12 @@
             });
         }
 
-        // Tax toggle functionality
         document.getElementById("switchCheckDefault").addEventListener("click", () => {
             document.querySelectorAll(".tax-info").forEach(info => {
                 info.style.display = info.style.display !== "inline" ? "inline" : "none";
             });
         });
         
-        // Mobile filter toggle
         document.getElementById('filterToggle').addEventListener('click', function() {
             const filters = document.getElementById('filters');
             filters.classList.toggle('show-filters');
