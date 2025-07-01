@@ -23,7 +23,7 @@ router.get("/logout" ,userController.logout);
 router.get("/make-admin", async (req, res) => {
     try {
         // Replace with your actual email
-        const adminEmail = "your-personal-email@gmail.com"; 
+        const adminEmail = "jashpandyaa@gmail.com"; 
         const user = await User.findOneAndUpdate(
             { email: adminEmail },
             { $set: { isAdmin: true } },
