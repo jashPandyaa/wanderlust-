@@ -114,6 +114,11 @@
     const searchInput = document.getElementById('searchInput');
     const errorElement = document.getElementById('searchError');
     
+    if (window.innerWidth < 768) {
+    errorElement.style.position = 'static';
+    errorElement.style.marginTop = '0.5rem';
+  }
+
     if (searchInput.value.trim() === '') {
       e.preventDefault();
       errorElement.textContent = 'Please enter a search term';

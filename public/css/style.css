@@ -172,3 +172,118 @@ h3 {
     height: 23rem;
     width: 75%;
 }
+
+/* Responsive styles */
+@media (max-width: 992px) { /* Tablet styles */
+  .navbar-nav {
+    margin-top: 1rem;
+  }
+  
+  .search-container {
+    margin: 1rem 0;
+  }
+  
+  .search-input {
+    min-width: 200px;
+    max-width: 100%;
+  }
+  
+  .show-img {
+    height: 25vh;
+    width: 25vh;
+  }
+  
+  #map {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) { /* Mobile styles */
+  .navbar {
+    height: auto;
+    padding: 1rem 0;
+  }
+  
+  .navbar-nav {
+    flex-direction: column;
+  }
+  
+  .search-container {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .search-input {
+    min-width: 100%;
+  }
+  
+  .search-btn {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .listing-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .show-img {
+    height: 20vh;
+    width: 20vh;
+  }
+  
+  .show-card {
+    margin-top: 1rem;
+  }
+  
+  .btns {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .btns a, .btns form button {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  
+  #filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .tax-toggle {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .col-8, .col-6 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+@media (max-width: 576px) { /* Small mobile devices */
+  .f-info {
+    height: auto;
+    padding: 1rem 0;
+  }
+  
+  .f-info-links, .f-info-socials, .f-info-brand {
+    margin: 0.5rem 0;
+  }
+  
+  .card-img-top {
+    height: 15rem;
+  }
+  
+  .show-img {
+    height: 15vh;
+    width: 15vh;
+  }
+}
