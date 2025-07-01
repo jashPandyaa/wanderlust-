@@ -2,64 +2,66 @@
 <div class="special" style="margin-left: 1.2rem;">
     
 <style>
-    /* Base Filter Styles */
-    #filters {
+    /* Filter Container */
+    .filters-container {
+        display: flex;
+        align-items: center;
         margin-bottom: 1rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* Filters Row */
+    #filters {
         display: flex;
         flex-wrap: wrap;
         gap: 1.5rem;
         align-items: center;
     }
-    
+
+    /* Individual Filter */
     .filter {
         opacity: 0.7;
         color: inherit;
         text-align: center;
         min-width: 60px;
+        text-decoration: none;
     }
-    
+
     .filter:hover {
         opacity: 1;
         cursor: pointer;
-        text-decoration: none;
     }
-    
+
     .filter p {
         font-size: 0.84rem;
         margin-top: 0.3rem;
+        margin-bottom: 0;
     }
-    
+
     .filter.active {
         opacity: 1;
         font-weight: bold;
         color: #fe424d;
     }
-    
-    /* Tax Toggle Styles */
-    .tax-toggle-container {
-        display: flex;
-        align-items: center;
-        margin-left: auto;
-    }
-    
+
+    /* Tax Toggle - Now aligned right */
     .tax-toggle {
+        margin-left: auto;
         border: 1px solid #ddd;
         border-radius: 1.2rem;
         padding: 0.5rem 1rem;
-        height: auto;
-        font-weight: 400;
-        display: flex;
-        align-items: center;
         background: white;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
     }
-    
+
     /* Mobile Styles */
-    @media (max-width: 992px) {
-        #filters-container {
-            display: flex;
+    @media (max-width: 768px) {
+        .filters-container {
             flex-direction: column;
-            gap: 1rem;
+            align-items: stretch;
         }
         
         #filters {
@@ -69,13 +71,13 @@
             -webkit-overflow-scrolling: touch;
         }
         
-        .tax-toggle-container {
+        .tax-toggle {
             margin-left: 0;
-            order: -1;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
+            order: 1;
         }
     }
-    
+
     /* Small Mobile Styles */
     @media (max-width: 576px) {
         #filters {
@@ -101,33 +103,70 @@
             gap: 0.5rem;
             min-width: auto;
         }
-        
+    }
+
+    /* Filter Toggle Button */
+    .filter-toggle-btn {
+        display: none;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 0.5rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    @media (max-width: 576px) {
         .filter-toggle-btn {
             display: block;
-            margin: 0.5rem 0;
-            padding: 0.5rem 1rem;
-            background: #f8f9fa;
-            border: 1px solid #ddd;
-            border-radius: 0.5rem;
-            width: 100%;
-            text-align: center;
         }
     }
-    
-    /* Tax Info Styles */
+
+    /* Tax Info */
     .tax-info {
         display: none;
     }
 </style>
 
-<div id="filters-container">
-    <!-- Tax Toggle - Now appears first on mobile -->
-    <div class="tax-toggle-container">
-        <div class="tax-toggle">
-            <div class="form-check-reverse form-switch" style="margin-right: 0.5rem;">
-                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
-                <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
-            </div>
+<div class="filters-container">
+    <!-- Filters -->
+    <div id="filters">
+        <a href="/listings?category=Trending" class="filter text-decoration-none">
+           <div><i class="fa-solid fa-fire"></i></div>
+           <p>Trending</p>
+        </a>
+        <a href="/listings?category=Rooms" class="filter text-decoration-none">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </a>
+        <a href="/listings?category=Iconic cities" class="filter text-decoration-none">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic cities</p>
+        </a>
+        <a href="/listings?category=Mountains" class="filter text-decoration-none">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </a>
+        <a href="/listings?category=Castles" class="filter text-decoration-none">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </a>
+        <a href="/listings?category=Amazing Pools" class="filter text-decoration-none">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </a>
+        <a href="/listings?category=Camping" class="filter text-decoration-none">
+            <div><i class="fa-solid fa-campground"></i></div>
+            <p>Camping</p>
+        </a>
+    </div>
+
+    <!-- Tax Toggle - Now on same line, aligned right -->
+    <div class="tax-toggle">
+        <div class="form-check-reverse form-switch" style="margin-right: 0.5rem;">
+            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+            <label class="form-check-label" for="switchCheckDefault">Display total after taxes</label>
         </div>
     </div>
 
@@ -135,18 +174,9 @@
     <button class="filter-toggle-btn" id="filterToggle">
         <i class="fas fa-filter"></i> Show Filters
     </button>
-
-    <!-- Filters -->
-    <div id="filters">
-        <a href="/listings?category=Trending" class="filter text-decoration-none">
-           <div><i class="fa-solid fa-fire"></i></div>
-           <p>Trending</p>
-        </a>
-        <!-- Rest of your filter links -->
-    </div>
 </div>
 
-<!-- Rest of your listing cards code remains the same -->
+<!-- Listing Cards -->
 <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
     <% for(let listing of allListings){ %> 
         <a href="/listings/<%= listing._id %>" class="listing-link">
@@ -165,25 +195,30 @@
     <% } %>
 </div>
 
-</div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Existing category highlighting code
+        // Highlight active category
+        const urlParams = new URLSearchParams(window.location.search);
+        const currentCategory = urlParams.get('category');
         
+        if (currentCategory) {
+            document.querySelectorAll('#filters a.filter').forEach(link => {
+                if (link.getAttribute('href').includes(currentCategory)) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
         // Tax toggle functionality
-        const taxSwitch = document.getElementById("switchCheckDefault");
-        taxSwitch.addEventListener("click", () => {
+        document.getElementById("switchCheckDefault").addEventListener("click", () => {
             document.querySelectorAll(".tax-info").forEach(info => {
                 info.style.display = info.style.display !== "inline" ? "inline" : "none";
             });
         });
         
         // Mobile filter toggle
-        const filterToggle = document.getElementById('filterToggle');
-        const filters = document.getElementById('filters');
-        
-        filterToggle.addEventListener('click', function() {
+        document.getElementById('filterToggle').addEventListener('click', function() {
+            const filters = document.getElementById('filters');
             filters.classList.toggle('show-filters');
             this.innerHTML = filters.classList.contains('show-filters') 
                 ? '<i class="fas fa-times"></i> Hide Filters' 
