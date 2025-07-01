@@ -195,3 +195,15 @@
   -webkit-transition: background-position .7s;
   transition: background-position .7s;
 }
+
+body.dark-mode .starability-result {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+body.dark-mode .starability-slot > label {
+  filter: brightness(0.8) contrast(1.2);
+}
+
+body.dark-mode .starability-slot > input:focus + label {
+  outline-color: #666;
+}

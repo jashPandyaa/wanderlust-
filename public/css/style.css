@@ -340,14 +340,35 @@ body.dark-mode .form-select {
 }
 
 body.dark-mode .tax-toggle {
-  background-color: #333;
-  border-color: #444;
+  background-color: #333 !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
 }
 
 body.dark-mode .filter-toggle-btn {
-  background-color: #333;
-  border-color: #444;
-  color: #e0e0e0;
+  background-color: #333 !important;
+    border-color: #444 !important;
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .filters-container {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode #filters {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .filter {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .filter:hover {
+  color: #fe424d !important;
+}
+
+body.dark-mode .form-check-label {
+  color: #e0e0e0 !important;
 }
 
 /* Dark mode toggle button */
@@ -362,4 +383,19 @@ body.dark-mode .filter-toggle-btn {
 
 body.dark-mode .dark-mode-toggle {
   color: #e0e0e0;
+}
+
+body.dark-mode .card.shadow-sm {
+  background-color: #1e1e1e !important;
+  border-color: #333 !important;
+}
+
+body.dark-mode .card-body h1,
+body.dark-mode .card-body h4,
+body.dark-mode .card-body p {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .text-muted {
+  color: #aaa !important;
 }
