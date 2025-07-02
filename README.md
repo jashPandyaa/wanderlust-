@@ -97,4 +97,4 @@ Source Code: GitHub (linked above)
 Jash PandyaFull-stack Developer | MERN Stack Enthusiast
 
 📬 Connect on LinkedIn : https://www.linkedin.com/in/jash-pandya/
-📁 GitHub Profile : github.com/jashPandyaa
+📁 GitHub Profile : https://github.com/jashPandyaa/
