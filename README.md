@@ -1,14 +1,14 @@
 # 🌍 Wanderlust - Full-Stack Travel Listing Web App
 
-Live Site: (wanderlust-lwvu.onrender.com)  , GitHub Repository: github.com/jashPandyaa/wanderlust-
+Live Site: wanderlust-lwvu.onrender.com  , GitHub Repository: github.com/jashPandyaa/wanderlust-
 
-📌 Overview
+## 📌 Overview
 
 Wanderlust is a fully responsive, full-stack travel listing website built using the MERN stack (without React). It offers a seamless user experience with features like user authentication, listing creation, reviews, search filters, and a mobile-first dark mode UI. The platform is designed with real-world functionality in mind, simulating a professional listing and booking experience.
 
 ⏱️ Development Duration: 18 Days
 
-🏗️ Tech Stack & Tools
+## 🏗️ Tech Stack & Tools
 
 🌐 Frontend
 
@@ -56,7 +56,7 @@ Cloudinary for cloud-based image storage
 
 Mapbox Geocoding API for location tagging
 
-✨ Features
+## ✨ Features
 
 Dynamic listings with user-generated content
 
@@ -78,7 +78,7 @@ Admin-only privileged access
 
 Mobile/tablet/desktop optimized experience
 
-🔐 Important Notes
+## 🔐 Important Notes
 
 Must read Privacy Policy and Terms & Conditions before signing up (linked in the footer)
 
@@ -92,7 +92,7 @@ Database: MongoDB Atlas
 
 Source Code: GitHub (linked above)
 
-👨‍💻 Author
+### 👨‍💻 Author
 
 Jash PandyaFull-stack Developer | MERN Stack Enthusiast
 
