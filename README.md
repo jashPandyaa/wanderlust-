@@ -1,4 +1,4 @@
-## 🌍 Wanderlust - Full-Stack Travel Listing Web App
+# 🌍 Wanderlust - Full-Stack Travel Listing Web App
 
 Live Site: wanderlust-lwvu.onrender.com  , GitHub Repository: github.com/jashPandyaa/wanderlust-
 
