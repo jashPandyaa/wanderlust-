@@ -1,4 +1,5 @@
 # 🌍 Wanderlust - Full-Stack Travel Listing Web App
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) 
 
 Live Site: wanderlust-lwvu.onrender.com  , GitHub Repository: github.com/jashPandyaa/wanderlust-
 
