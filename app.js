@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
-const port = 8080;
+const port = process.env.PORT || 8080;
 const session = require("express-session");
 const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
@@ -93,6 +93,8 @@ app.use("/", staticRouter);
 app.use("/listings" , listingRouter);
 app.use("/listings/:id/reviews", reviewsRouter);
 app.use("/" , userRouter);
+
+app.get("/health", (req, res) => res.sendStatus(200)); //Health check route for production - deployment!
 
 app.use((req, res) => {
   res.status(404).send("Page not found");
